@@ -5,13 +5,14 @@ public class RentalMobil {
         Scanner ketik = new Scanner(System.in);
         
         String[]nMobil = {"Toyota Avanza","Daihatsu Xenia"};
+        String[]wMobil = {"Hitam", "Hitam"};
+        int[]jWaktu = {24, 24};
         int[]hSewa = {375000, 375000};
         ListMobil[]listM = new ListMobil[nMobil.length];
-        Tools.pMobil(listM, nMobil, hSewa);
-        int no_mobil, harga_M;
-        String nama_M;
+        Tools.pMobil(listM, nMobil, wMobil, jWaktu, hSewa);
+        int no_mobil;
         
-        String cNama, cNoTelp;
+        String cNama, cAlamat, cNoKTP, cNoTelp, cEmail;
         
         int app = 1;
         String back;
@@ -21,27 +22,43 @@ public class RentalMobil {
             p_menu = ketik.nextLine();
             switch(p_menu){
                 case "1":
-                    if(listM.length==0){
+                    System.out.println("");
+                    if(listM.length == 0){
                         System.out.println("Tidak ada mobil yang bisa disewa");
                         System.out.print("Tekan Enter untuk keluar...");
                         back = ketik.nextLine();
                         System.out.println("");
-                        break;
+                    } else {
+                        Tools.listMobil(listM);
+                        System.out.print("Tekan Enter untuk keluar...");
+                        back = ketik.nextLine();
+                        System.out.println("");
+                    }
+                    break;
+                case "2":
+                    System.out.println("");
+                    if(listM.length == 0){
+                        System.out.println("Tidak ada mobil yang bisa disewa");
+                        System.out.print("Tekan Enter untuk keluar...");
+                        back = ketik.nextLine();
+                        System.out.println("");
                     } else {
                         Tools.listMobil(listM);
                         no_mobil = Tools.inputInt("Nomor Mobil")-1;
                         cNama = Tools.inputString("Nama");
+                        cAlamat = Tools.inputString("Alamat");
+                        cNoKTP = Tools.inputString("No. KTP");
                         cNoTelp = Tools.inputString("No. Telp");
-                        nama_M = listM[no_mobil].getNamaMobil();
-                        harga_M = listM[no_mobil].getHargaSewa();
-                        Tools.cetak(cNama, cNoTelp, nama_M, harga_M);
+                        cEmail = Tools.inputString("Email");
+                        System.out.println("");
+                        Tools.cetak(cNama, cAlamat, cNoKTP, cNoTelp, cEmail, listM[no_mobil]);
                         listM = Tools.removeArray(listM, no_mobil);
                         System.out.print("Tekan Enter untuk keluar...");
                         back = ketik.nextLine();
                         System.out.println("");
-                        break;
                     }
-                case "2":
+                    break;
+                case "3":
                     app = 0;
                     System.out.println("");
                     break;
