@@ -16,22 +16,27 @@ public class Tools {
     static void menu(){
         System.out.println("===============");
         System.out.println("Menu:");
-        System.out.println("1. Sewa Mobil");
-        System.out.println("2. Keluar");
+        System.out.println("1. List Mobil");
+        System.out.println("2. Sewa Mobil");
+        System.out.println("3. Keluar");
         System.out.println("===============");
         System.out.print("Pilih aksi => ");
     }
-    static void listMobil(ListMobil[]mobil){
-        System.out.println("***List Mobil***");
-        for(int i=0;i<mobil.length;i++){
-            System.out.println((i+1)+". "+mobil[i].getNamaMobil()+"\t"+mobil[i].getHargaSewa());
-        }
-        System.out.println("**********************");
-    }
-    static void pMobil(ListMobil[]mobil, String[]nama, int[]harga){
+    static void pMobil(ListMobil[]mobil, String[]nama, String[]warna, int[]waktu, int[]harga){
         for(int i = 0; i < nama.length; i++){
-            mobil[i] = new ListMobil(nama[i],harga[i]);
+            mobil[i] = new ListMobil(nama[i]);
+            mobil[i].setWarna(warna[i]);
+            mobil[i].setJangkaWaktu(waktu[i]);
+            mobil[i].setHargaSewa(harga[i]);
         }
+    }
+    static void listMobil(ListMobil[]mobil){
+        System.out.println("*************************List Mobil*************************");
+        System.out.println("No. Nama Mobil\t\tWarna\tJangka Waktu\tTarif");
+        for(int i=0;i<mobil.length;i++){
+            System.out.println((i+1)+".  "+mobil[i].getNamaMobil()+"\t"+mobil[i].getWarna()+"\t"+mobil[i].getJangkaWaktu()+"jam\t\t"+mobil[i].getHargaSewa());
+        }
+        System.out.println("************************************************************");
     }
     static ListMobil[] removeArray(ListMobil[]mobil, int index){
         if(mobil==null || index<0 || index>=mobil.length){
@@ -46,12 +51,17 @@ public class Tools {
         }
         return another; 
     }
-    static void cetak(String namaC, String noTelp, String namaM, int tarifM){
-        System.out.println("---------------");
+    static void cetak(String namaC, String alamatC, String noKTP, String noTelp, String email, ListMobil obj){
+        System.out.println("--------------------------------------------------");
         System.out.println("Nama\t\t\t: "+namaC);
+        System.out.println("Alamat\t\t\t: "+alamatC);
+        System.out.println("No. KTP\t\t\t: "+noKTP);
         System.out.println("No. Telp\t\t: "+noTelp);
-        System.out.println("Mobil yang disewa\t: "+namaM);
-        System.out.println("Tarif sewa\t\t: "+tarifM);
-        System.out.println("---------------");
+        System.out.println("Email\t\t\t: "+email);
+        System.out.println("Mobil yang disewa\t: "+obj.getNamaMobil());
+        System.out.println("Warna Mobil\t\t: "+obj.getWarna());
+        System.out.println("Waktu Penyewaan\t\t: "+obj.getJangkaWaktu());
+        System.out.println("Tarif sewa\t\t: "+obj.getHargaSewa());
+        System.out.println("--------------------------------------------------");
     }
 }
