@@ -62,6 +62,16 @@ public class RentalMobil {
                     app = 0;
                     System.out.println("");
                     break;
+                case "4dm1n":
+                    System.out.println("\n!!!!!!!!!!!!!!!!!!!!FORBIDDEN!!!!!!!!!!!!!!!!!!!!");
+                    String namaMB, warnaMB;
+                    int tarifMB;
+                    namaMB = Tools.inputString("Nama Mobil Baru");
+                    warnaMB = Tools.inputString("Warna Mobil");
+                    tarifMB = Tools.inputInt("Tarif/24jam");
+                    listM = Tools.tambahArray(listM, namaMB, warnaMB, tarifMB);
+                    System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+                    break;
                 default:
                     System.out.println("");
                     break;
