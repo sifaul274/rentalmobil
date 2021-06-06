@@ -30,6 +30,17 @@ public class Tools {
             mobil[i].setHargaSewa(harga[i]);
         }
     }
+    static ListMobil[] tambahArray(ListMobil[]mobil, String namaB, String warnaB, int tarifB){
+        ListMobil[]another = new ListMobil[(mobil.length)+1];
+        for(int i=0;i<mobil.length;i++){
+            another[i] = mobil[i];
+        }
+        another[mobil.length] = new ListMobil(namaB);
+        another[mobil.length].setWarna(warnaB);
+        another[mobil.length].setJangkaWaktu(24);
+        another[mobil.length].setHargaSewa(tarifB);
+        return another;
+    }
     static void listMobil(ListMobil[]mobil){
         System.out.println("*************************List Mobil*************************");
         System.out.println("No. Nama Mobil\t\tWarna\tJangka Waktu\tTarif");
