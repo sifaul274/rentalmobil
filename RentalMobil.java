@@ -4,10 +4,10 @@ public class RentalMobil {
     public static void main(String[] args) {
         Scanner ketik = new Scanner(System.in);
         
-        String[]nMobil = {"Daihatsu Ayla","Honda Brio   ","Suzuki Ertiga","Nissan Livina","Toyota Avanza","Daihatsu Xenia","Toyota Innova"};
-        String[]wMobil = {"Merah","Kuning","Silver","Oranye","Bronze","Biru","Putih"};
-        int[]jWaktu = {24, 24, 24, 24, 24, 24, 24};
-        int[]hSewa = {325000, 325000, 375000, 375000, 375000, 375000, 475000};
+        String[]nMobil = {"Daihatsu Ayla","Honda Brio   ","Suzuki Ertiga","Nissan Livina","Toyota Avanza","Daihatsu Xenia","Toyota Innova","Toyota HiAce","Isuzu Elf    ","Jeep             "};
+        String[]wMobil = {"Merah","Kuning","Silver","Oranye","Bronze","Biru","Putih","Putih","Putih","Hitam"};
+        int[]jWaktu = {24, 24, 24, 24, 24, 24, 24, 24, 24, 24};
+        int[]hSewa = {325000, 325000, 375000, 375000, 375000, 375000, 475000, 700000, 500000, 645000};
         ListMobil[]listM = new ListMobil[nMobil.length];
         Tools.pMobil(listM, nMobil, wMobil, jWaktu, hSewa);
         int no_mobil;
