@@ -1,13 +1,15 @@
 package rentalmobil;
 import java.util.Scanner;
-public class Tools {
+public class ToolsMenu implements EditArray, InputVar{
     static Scanner ketik = new Scanner(System.in);
-    static String inputString(String label){
+    @Override
+    public String inputString(String label){
         System.out.print("Masukkan "+label+" : ");
         String var = ketik.nextLine();
         return var;
     }
-    static int inputInt(String label){
+    @Override
+    public int inputInt(String label){
         System.out.print("Masukkan "+label+" : ");
         String a = ketik.nextLine();
         int var = Integer.parseInt(a);
@@ -30,7 +32,8 @@ public class Tools {
             mobil[i].setHargaSewa(harga[i]);
         }
     }
-    static ListMobil[] tambahArray(ListMobil[]mobil, String namaB, String warnaB, int tarifB){
+    @Override
+    public ListMobil[] tambahArray(ListMobil[]mobil, String namaB, String warnaB, int tarifB){
         ListMobil[]another = new ListMobil[(mobil.length)+1];
         for(int i=0;i<mobil.length;i++){
             another[i] = mobil[i];
@@ -49,7 +52,8 @@ public class Tools {
         }
         System.out.println("************************************************************");
     }
-    static ListMobil[] removeArray(ListMobil[]mobil, int index){
+    @Override
+    public ListMobil[] hapusArray(ListMobil[]mobil, int index){
         if(mobil==null || index<0 || index>=mobil.length){
             return mobil;
         }
