@@ -16,13 +16,13 @@ public class ToolsMenu implements EditArray, InputVar{
         return var;
     }
     static void menu(){
-        System.out.println("===============");
-        System.out.println("Menu:");
-        System.out.println("1. List Mobil");
-        System.out.println("2. Sewa Mobil");
-        System.out.println("3. Keluar");
-        System.out.println("===============");
-        System.out.print("Pilih aksi => ");
+        System.out.println("=======SELAMAT DATANG DI RENTAL MOBIL========");
+        System.out.println(" Menu:");
+        System.out.println(" 1. List Mobil");
+        System.out.println(" 2. Sewa Mobil");
+        System.out.println(" 3. Keluar");
+        System.out.println("=============================================");
+        System.out.print("Pilih menu => ");
     }
     static void pMobil(ListMobil[]mobil, String[]nama, String[]warna, int[]waktu, int[]harga){
         for(int i = 0; i < nama.length; i++){
@@ -75,7 +75,7 @@ public class ToolsMenu implements EditArray, InputVar{
         System.out.println("Email\t\t\t: "+email);
         System.out.println("Mobil yang disewa\t: "+obj.getNamaMobil());
         System.out.println("Warna Mobil\t\t: "+obj.getWarna());
-        System.out.println("Waktu Penyewaan\t\t: "+obj.getJangkaWaktu());
+        System.out.println("Waktu Penyewaan\t\t: "+obj.getJangkaWaktu()+" jam");
         System.out.println("Tarif sewa\t\t: "+obj.getHargaSewa());
         System.out.println("--------------------------------------------------");
     }
